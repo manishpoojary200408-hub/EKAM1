@@ -1,7 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { ArrowUpRight, CheckCircle2, Zap } from 'lucide-react';
-import { AGENCY_STATS } from '../data';
 
 interface AboutProps {
   onOpenMoreAbout: () => void;
@@ -95,29 +93,6 @@ export const About: React.FC<AboutProps> = ({ onOpenMoreAbout }) => {
           </div>
         </div>
 
-        {/* Agency Metrics Strip in Black on Cream */}
-        <div className="mt-20 pt-12 border-t border-[#080706]/15 grid grid-cols-2 md:grid-cols-4 gap-8">
-          {AGENCY_STATS.map((stat, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="space-y-1"
-            >
-              <div className="font-editorial text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#080706] tracking-tight">
-                {stat.value}
-              </div>
-              <div className="text-xs sm:text-sm font-semibold text-[#080706] uppercase tracking-wider">
-                {stat.label}
-              </div>
-              <div className="text-[11px] text-[#080706]/60 font-mono">
-                {stat.detail}
-              </div>
-            </motion.div>
-          ))}
-        </div>
       </div>
     </section>
   );

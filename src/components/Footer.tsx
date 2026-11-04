@@ -14,17 +14,14 @@ export const Footer: React.FC = () => {
     { label: 'Home', href: '#home' },
     { label: 'About', href: '#about' },
     { label: 'Services', href: '#services' },
-    { label: 'Our Work', href: '#work' },
     { label: 'Why EKAM', href: '#why-us' },
     { label: 'Contact', href: '#contact' },
   ];
 
   const socialLinks = [
-    { label: 'Instagram', href: 'https://instagram.com' },
-    { label: 'LinkedIn', href: 'https://linkedin.com' },
+    { label: 'Instagram', href: 'https://instagram.com/ekam.in_' },
     { label: 'X (Twitter)', href: 'https://x.com' },
     { label: 'Behance', href: 'https://behance.net' },
-    { label: 'Awwwards', href: 'https://awwwards.com' },
   ];
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {

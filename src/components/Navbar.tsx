@@ -15,7 +15,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 40);
 
-      const sections = ['home', 'about', 'services', 'work', 'why-us', 'contact'];
+      const sections = ['home', 'about', 'services', 'why-us', 'contact'];
       const scrollPosition = window.scrollY + 200;
 
       for (const section of sections) {
@@ -39,7 +39,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
     { label: 'Home', href: '#home', id: 'home' },
     { label: 'About', href: '#about', id: 'about' },
     { label: 'Services', href: '#services', id: 'services' },
-    { label: 'Our Work', href: '#work', id: 'work' },
     { label: 'Contact', href: '#contact', id: 'contact' },
   ];
 
@@ -173,7 +172,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
             </button>
 
             <div className="flex items-center justify-between text-xs text-[#A49B8F] pt-2 font-mono">
-              <span>hello@ekam.com</span>
+              <span>ekamagency01@gmail.com</span>
               <span>Available Q2 2026</span>
             </div>
           </div>

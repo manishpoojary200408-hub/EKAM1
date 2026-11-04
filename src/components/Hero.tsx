@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, ArrowDown, Sparkles, Compass, ShieldCheck } from 'lucide-react';
 import { EkamWordmark } from './EkamWordmark';
+import { HeroFlames } from './HeroFlames';
 
 interface HeroProps {
   onExploreServices: () => void;
@@ -14,20 +15,20 @@ export const Hero: React.FC<HeroProps> = ({ onExploreServices, onStartProject })
       id="home"
       className="relative min-h-screen pt-32 pb-16 md:pt-36 md:pb-24 flex flex-col justify-between overflow-hidden bg-[#080706] text-[#F8F0E4]"
     >
-      {/* Cinematic warm horizon glow at bottom (inspired by Yatharth Social) */}
-      <div className="absolute bottom-0 left-0 right-0 h-[280px] bg-gradient-to-t from-[#B88746]/10 via-[#7A4B1A]/5 to-transparent pointer-events-none -z-0" />
+      {/* Cinematic living flame horizon & glowing floating embers (inspired by Yatharth Social) */}
+      <HeroFlames />
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[#F8F0E4]/[0.02] blur-[160px] pointer-events-none -z-0" />
 
       {/* Decorative ambient subtle grid lines */}
       <div className="absolute inset-0 bg-noise opacity-40 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 w-full relative z-10 my-auto flex flex-col justify-center">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 w-full relative z-10">
         {/* Top Editorial Status Pill */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="flex items-center justify-between mb-8"
+          className="flex items-center mb-8"
         >
           <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#11100E]/90 backdrop-blur-md border border-[#F8F0E4]/15 text-[11px] md:text-xs font-mono uppercase tracking-[0.2em] text-[#F8F0E4] shadow-2xl">
             <span className="relative flex h-2 w-2">
@@ -37,11 +38,6 @@ export const Hero: React.FC<HeroProps> = ({ onExploreServices, onStartProject })
             <span className="font-semibold tracking-wider">INDEPENDENT CREATIVE &amp; DIGITAL AGENCY</span>
             <span className="text-[#F8F0E4]/30">•</span>
             <span className="text-[#A49B8F] hidden sm:inline">GLOBAL ROSTER</span>
-          </div>
-
-          <div className="hidden md:flex items-center gap-3 text-xs font-mono text-[#A49B8F]">
-            <span className="w-2 h-2 rounded-full bg-emerald-500/80 animate-pulse" />
-            <span>ACCEPTING SELECT Q2/Q3 PROJECTS</span>
           </div>
         </motion.div>
 
@@ -56,21 +52,23 @@ export const Hero: React.FC<HeroProps> = ({ onExploreServices, onStartProject })
             WE BUILD BRANDS THAT MEAN <span className="text-[#F8F0E4] font-black underline decoration-[#F8F0E4]/40 underline-offset-4">BUSINESS</span>
           </h2>
         </motion.div>
+      </div>
 
-        {/* MAJESTIC SCREEN-SPANNING BRAND NAME (YATHARTH HERO INSPIRATION + IMAGE 2 LOGO) */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.94, y: 25 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="relative w-full my-2 sm:my-4 md:my-6 py-4 flex items-center justify-center border-y border-[#F8F0E4]/10 overflow-hidden"
-        >
-          {/* Subtle ambient back-glow behind the leaf logo */}
-          <div className="absolute inset-0 bg-radial-gradient opacity-20 pointer-events-none" />
+      {/* MAJESTIC SCREEN-SPANNING BRAND NAME */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.94, y: 25 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+        className="relative w-full my-2 sm:my-4 md:my-6 py-6 md:py-10 flex items-center justify-center border-y border-[#F8F0E4]/10 overflow-hidden z-10 px-4 sm:px-8"
+      >
+        {/* Subtle ambient back-glow behind the leaf logo */}
+        <div className="absolute inset-0 bg-radial-gradient opacity-20 pointer-events-none" />
 
-          {/* Full-width EKAM Wordmark with the Bodhi Leaf 'A' from Image 2 */}
-          <EkamWordmark size="hero" className="py-2" />
-        </motion.div>
+        {/* Full-width EKAM Wordmark */}
+        <EkamWordmark size="hero" />
+      </motion.div>
 
+      <div className="max-w-7xl mx-auto px-6 md:px-12 w-full relative z-10">
         {/* Bottom Hero Layout (Inspired by Yatharth Social's bottom-split layout) */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -81,11 +79,12 @@ export const Hero: React.FC<HeroProps> = ({ onExploreServices, onStartProject })
           {/* Left Column: Narrative & Explore Link */}
           <div className="lg:col-span-7 space-y-4">
             <p className="font-luxury italic text-2xl sm:text-3xl text-[#F8F0E4] leading-snug">
-              "Where strategy meets design."
+              "Where creativity meets digital growth."
             </p>
             <p className="text-base sm:text-lg text-[#E9DFD0]/85 max-w-xl font-normal leading-relaxed">
-              We help ambitious brands turn ideas into identities and digital experiences that make an impact.
-              Rooted in singularity of purpose, elevated through international creative craft.
+              We help ambitious brands build powerful digital identities through strategic social media management,
+              creative content, and impactful marketing. From building brand awareness to creating meaningful
+              engagement, we turn your social presence into a platform for growth, connection, and success.
             </p>
 
             <div className="pt-2">
@@ -128,15 +127,13 @@ export const Hero: React.FC<HeroProps> = ({ onExploreServices, onStartProject })
             </div>
           </div>
         </motion.div>
-      </div>
 
-      {/* Bottom Scroll Indicator in Cream */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 w-full mt-12 relative z-10">
+        {/* Bottom Scroll Indicator in Cream */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="flex items-center justify-between pt-6 border-t border-[#F8F0E4]/10 text-xs font-mono text-[#A49B8F] uppercase tracking-widest"
+          className="mt-12 flex items-center justify-between pt-6 border-t border-[#F8F0E4]/10 text-xs font-mono text-[#A49B8F] uppercase tracking-widest"
         >
           <div className="flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-[#F8F0E4]"></span>
